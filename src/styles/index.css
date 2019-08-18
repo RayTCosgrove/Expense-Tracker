@@ -1,0 +1,32 @@
+.wrapper{
+    display: grid;
+    grid-template-columns: 2fr 8fr;
+    grid-template-rows: 5% 95%;
+    grid-template-areas:
+        "topbar topbar"
+        "sidebar content";
+    height: 1000px;
+  }
+  
+  .sidebar{
+    grid-area: sidebar;
+    background-color: aqua;
+  }
+  
+  .topbar{
+    grid-area: topbar;
+    background-color: green;
+  }
+  
+  .content{
+    grid-area: content;
+    background-color: white;
+    padding: 50px;
+  }
+  
+  .card{
+    margin-left: auto;
+    margin-right: auto;
+    width: 720px;
+    height: 480px;
+  }
