@@ -1,26 +1,30 @@
+body{
+  margin: 0px;
+
+}
 .wrapper{
     display: grid;
     grid-template-columns: 2fr 8fr;
-    grid-template-rows: 5% 95%;
+    grid-auto-rows: auto;
     grid-template-areas:
-        "topbar topbar"
+        "sidebar topbar"
         "sidebar content";
-    height: 1000px;
+    
   }
   
   .sidebar{
     grid-area: sidebar;
-    background-color: aqua;
+    background-color: rgb(63, 63, 63);
   }
   
   .topbar{
     grid-area: topbar;
-    background-color: green;
+    
   }
   
   .content{
     grid-area: content;
-    background-color: white;
+    background-color: rgb(243, 243, 243);
     padding: 50px;
   }
   

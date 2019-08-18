@@ -5,13 +5,13 @@ import Topbar from './components/Topbar';
 
 
 
-
 function App() {
   return (
     <div className="wrapper">
-    <Topbar/>
-    <Sidebar/>
-    <Content/>
+      <Topbar/>
+     
+      <Sidebar />
+      <Content />
     </div>
   );
 }

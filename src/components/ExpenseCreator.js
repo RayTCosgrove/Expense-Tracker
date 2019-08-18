@@ -6,7 +6,9 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
-
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import Typography from '@material-ui/core/Typography';
 
 
 class Content extends React.Component {
@@ -20,6 +22,7 @@ class Content extends React.Component {
             type: "",
             amount: 0,
             spender: ""
+            
 
 
         }
@@ -45,7 +48,8 @@ class Content extends React.Component {
             description: this.state.description,
             type: this.state.type,
             amount: this.state.amount,
-            spender: this.state.spender
+            spender: this.state.spender,
+            date: new Date()
         })
         this.handleClose();
     }
@@ -55,9 +59,21 @@ class Content extends React.Component {
 
     return (
 
-        <React.Fragment>
+        <div style={{display: 'inline-block'}}>
 
-            <Button variant="outlined" onClick={this.handleOpen}>croatoa</Button>
+
+        <Card style={{display: 'inline-block'}} onClick={this.handleOpen} hover={true}>
+                    <CardContent>
+                        <Typography>
+                            Click to:
+                        </Typography>
+                        <Button size="small">
+                            Add a new expense
+                        </Button>
+                    </CardContent>
+                </Card>
+
+           
 
             <Dialog open={this.state.dialogOpen} onClose={this.handleClose} >
                 <DialogTitle>Add a new expense</DialogTitle>
@@ -70,6 +86,7 @@ class Content extends React.Component {
                         id="description"
                         label="Expense Description"
                         type="text"
+                        value={this.state.description}
                         onChange={this.handleChange("description")}
                     />
                     <br />
@@ -80,6 +97,7 @@ class Content extends React.Component {
                         id="type"
                         label="Expense Type"
                         type="text"
+                        value={this.state.type}
                         onChange={this.handleChange('type')}
 
                     />
@@ -91,6 +109,7 @@ class Content extends React.Component {
                         id="amount"
                         label="Expense Amount"
                         type="number"
+                        value={this.state.amount}
                         onChange={this.handleChange('amount')}
 
 
@@ -103,6 +122,7 @@ class Content extends React.Component {
                         id="spender"
                         label="Expense Spender"
                         type="text"
+                        value={this.state.spender}
                         onChange={this.handleChange('spender')}
 
                     />
@@ -120,7 +140,7 @@ class Content extends React.Component {
             </Dialog>
 
 
-        </React.Fragment>
+        </div>
 
 
     );
